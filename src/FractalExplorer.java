@@ -22,7 +22,6 @@ public class FractalExplorer {
 
     public FractalExplorer (int display_size) {
         size = display_size;
-
         range = new Rectangle2D.Double();
         fractal = new Mandelbrot();
         fractal.getInitialRange(range);
@@ -83,6 +82,8 @@ public class FractalExplorer {
         jDisplay.repaint();
     }
 
+    /** внутренний класс для обработки событий
+     java.awt.event.ActionListener от кнопки сброса **/
     public class InActionListener implements ActionListener {
         @Override
         public void actionPerformed (ActionEvent event) {
@@ -91,6 +92,8 @@ public class FractalExplorer {
         }
     }
 
+    /** внутренний класс для обработки событий
+     java.awt.event.MouseListener с дисплея **/
     private class InMouseListener extends MouseAdapter {
         @Override
         public void mouseClicked(MouseEvent event) {
